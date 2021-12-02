@@ -1,12 +1,17 @@
 {
   "name": "react-modele",
+  "private": true,
+  "homepage": "https://Lindow-N.github.io/Copie-tinder",
+
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js",
     "clean": "rm -rf dist",
-    "clean:all": "rm -rf dist node_modules yarn.lock package-lock.json"
+    "clean:all": "rm -rf dist node_modules yarn.lock package-lock.json",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -47,6 +52,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
+    "gh-pages": "^3.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
